@@ -1,11 +1,11 @@
 package org.pineda.poointerfaces.imprenta.modelo;
 
-public class Informe extends Hoja{
+public class Informe extends Hoja implements Iimprimible{
 	
-	private String autor;
-	private String revisor;
+	private Persona autor;
+	private Persona revisor;
 
-	public Informe(String autor, String revisor, String contenido) {
+	public Informe(Persona autor, Persona revisor, String contenido) {
 		super(contenido);
 		this.autor = autor;
 		this.revisor = revisor;
@@ -15,4 +15,5 @@ public class Informe extends Hoja{
 	public String imprimir() {
 		return "Informe escrito por: " + autor + " Revisado por: " + revisor + "\n" + this.contenido;
 	}
+
 }
